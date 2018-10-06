@@ -1,1 +1,39 @@
 @import "bootstrap";
+
+body {
+	font-size: 14px;
+}
+
+#top-menu {
+	background-color: #031547;
+	color: white;
+	margin-bottom: 25px;
+	text-transform: uppercase;
+	td {
+		padding: 5px 10px;
+		text-align: center;
+		vertical-align: top;
+	}
+}
+
+#savings {
+	margin-top: 25px;
+	
+}
+
+#summary,
+#savings {
+	width: 100%;
+	th,
+	td {
+		padding: 5px 10px;
+	}
+	th {
+		font-weight: bold;
+		color: white;
+		background-color: #031547;
+	}
+	.subheader {
+		font-weight: bold;
+	}
+}

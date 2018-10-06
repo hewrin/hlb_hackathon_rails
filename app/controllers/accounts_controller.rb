@@ -2,7 +2,7 @@ class AccountsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @account = Account.first
+    @accounts = Account.all
   end
 
   def update

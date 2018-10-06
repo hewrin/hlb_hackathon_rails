@@ -1,6 +1,82 @@
 <div class='container'>
-  <p>
-    <%= @account.name %>
-    <%= @account.amount %>
-  </p>
+
+	<header class="blog-header py-3">
+		<div class="row flex-nowrap justify-content-between align-items-center">
+		  <div class="col-3 pt-1" style="border-right: solid 1px black">
+				<%= image_tag "connectlogo.jpeg", style: 'height: 60px' %>
+		  </div>
+		  <div class="col-5">
+				<p class="blog-header-logo text-dark"><strong>Welcome AINOR SYAHRIZAL</strong><br />
+				Last login on 7 October 2018, 9.41am</p>
+		  </div>
+		  <div class="col-4 d-flex justify-content-end align-items-center">
+				<div class="btn btn-sm btn-secondary disabled" style="margin-right: 10px">MESSAGES</div>
+				<div class="btn btn-sm btn-danger">LOGOUT</div>
+		  </div>
+		</div>
+	 </header>
+
+  <section>
+		<table id="top-menu">
+			<tr>
+				<td width="9%"><%= image_tag "home.png", style: 'height: 42px' %></td>
+				<td width="13%">Pay & Transact</td>
+				<td width="13%">International Transfer</td>
+				<td width="13%">Statement / Invoice</td>
+				<td width="13%">Apply</td>
+				<td width="13%">Other Services</d>
+				<td width="13%">Settings</td>
+				<td width="13%" bgcolor= white><%= image_tag "hlebroking.png", style: 'height: 30px' %></td>
+			</tr>
+		</table>
+  </section>
+
+  <section>
+		<table class="table" id="summary">
+			<tr>
+				<th colspan="5">Account Summary</th>
+			</tr>
+			<tr class="subheader" style="background-color: #f1ffff;">
+				<td>Current / Savings Account-i</td>
+				<td>Connect ATM Withdrawal</td>
+				<td>Download Connect App</td>
+				<td>Credit Card</td>
+				<td>Loan / Financing</td>
+			</tr>
+			<tr>
+				<td >MYR <%= Account.total %>.00</td>
+				<td >Enhance banking experience on-the-go</td>
+				<td >Available on iOS and Android</td>
+				<td >Earn up to 6x Rewards Points</td>
+				<td >48 hours approval on Personal Loan</td>
+			</tr>
+			<tr style="font-weight: bold; background-color: #eee">
+				<td colspan="3" align="right">Total Equivalent Balance : MYR <%= Account.total %>.00</td>
+				<td colspan="2" align="right">Total Outstanding Balance : MYR 0.00</td>
+			</tr>
+		</table>
+  </section>
+  <section>
+		<table class="table table-striped" id="savings">
+			<tr>
+				<th colspan="5">Current / Savings Account-i</td>
+			</tr>
+			<tr class="subheader">
+				<td>Account Details</td>
+				<td>Available Balance</td>
+				<td>Current Balance</td>
+				<td>Equivalent Balance</td>
+				<td>Actions</td>
+			</tr>
+			<% @accounts.each do |account| %>
+				<tr>
+					<td><%= account.name %> Account<br><%= account.account_number %></td>
+					<td>MYR<br><%= account.amount %>.00</td>
+					<td>MYR<br><%= account.amount %>.00</td>
+					<td>MYR<br><%= account.amount %>.00</td>
+					<td><i class="arrow down"></i><div class="btn btn-secondary disabled btn-sm">View Details</div></td>
+				</tr>
+			<% end %>
+		</table>
+  </section>
 </div>

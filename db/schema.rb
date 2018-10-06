@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20181006083559) do
   create_table "accounts", force: :cascade do |t|
     t.integer "amount", default: 0
     t.string "name"
+    t.string "account_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
